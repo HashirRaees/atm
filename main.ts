@@ -2,7 +2,8 @@
 import inquirer from "inquirer";
 import chalk from "chalk"
 
-console.log(chalk.bold.green("\n\tWELCOME\n\t"),chalk.italic.yellowBright("\nATM Machine By HashirRaees\n"))
+console.log(chalk.bold.yellowBright("\n\t WELCOME \n\t"))
+console.log(chalk.italic.redBright("\n ATM Machine by Hashir Raees \n"))
 
 let mybankbalance = 10000; //dollars
 let mypin = 1158;
@@ -16,7 +17,7 @@ let pinanswer = await inquirer.prompt(
       ]
 );
 if (pinanswer.pin === mypin){
-    console.log(chalk.greenBright("correct pin code"));
+    console.log("correct pin code");
 
    let operationAns = await inquirer.prompt(
         [
@@ -39,15 +40,15 @@ if (pinanswer.pin === mypin){
             }
         ] 
        );if (cashAns.cash > mybankbalance)
-        console.log(chalk.redBright("Insufficient balance"))
+        console.log("Insufficient balance")
 
        else (mybankbalance -= cashAns.cash)
-        console.log(chalk.blueBright("Your remaining balance is:" + mybankbalance))
+        console.log("Your remaining balance is:" + mybankbalance)
        
     }
       if (operationAns.operation === "check balance"){
 
-        console.log(chalk.blueBright("your balance is: " + mybankbalance))
+        console.log("your balance is: " + mybankbalance)
     }
 
     if (operationAns.operation === "fast cash"){
@@ -64,9 +65,10 @@ if (pinanswer.pin === mypin){
             ]
         );
         mybankbalance -= amountAns.amount
-    console.log(chalk.blueBright("your remaining balacnce is:" + mybankbalance))   
+    console.log("your remaining balacnce is:" + mybankbalance)   
          }
 }
 else {
-    console.log(chalk.redBright("Incorrect pin number"));
+    console.log("Incorrect pin number");
  }
+
